@@ -11,3 +11,17 @@
 - selected answers to multiple choice questions
 - user initials
 
+# What kind of actions does my application need?
+
+- start action
+    - hide welcome
+    - display the next question
+    - start the countdown timer
+
+- validate users choice
+    - IF the choice is wrong, subtract from the timer
+
+- display the next question
+- display the answer result
+- end the game
+    - stop the timer from counting down [clearInterval]

@@ -1,8 +1,9 @@
 // add timer element
 var timer = document.getElementById('countdown');
+var timeLeft = 0;
 
 function countdown() {
-    var timeLeft = 75;
+    timeLeft = 75;
     var timeInterval = setInterval(function () {
         timeLeft--;
         timer.textContent = "Time: " + timeLeft;
@@ -17,3 +18,17 @@ function countdown() {
 }
 
 countdown()
+
+// create an object with the question sets
+var questions = [
+    {
+        question: "Commonly used data types DO NOT include",
+        multChoices: [
+            "1. strings",
+            "2. booleans",
+            "3. alerts",
+            "4. numbers"
+        ],
+        correct: "alert"
+    }
+]
