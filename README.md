@@ -5,9 +5,9 @@ Timed coding assessment with multiple choice questions.
 ## User Story
 
 ```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+AS A citizen of the United States
+I WANT to take a timed quiz on state capitals that stores high scores
+SO THAT I can learn the state capitals in a fun game format
 ```
 
 ## Acceptance Criteria
