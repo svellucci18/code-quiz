@@ -556,7 +556,7 @@ function countdown() {
 // When start game is clicked start timer, hide welcome content and start quiz
 startGameButton.addEventListener("click",countdown);
 startGameButton.addEventListener("click",hideWelcome);
-// startGameButton.addEventListener("click",quiz);
+startGameButton.addEventListener("click",quiz);
 
 function hideWelcome() {
     startGameButton.remove();
@@ -581,7 +581,10 @@ multChoice4.textContent = "4. Omaha";
 // function for the quiz
 var quizIndex = 0;
 function quiz() {
-    
-
+    contentContainerEl.appendChild(question);
+    contentContainerEl.appendChild(multChoice1);
+    contentContainerEl.appendChild(multChoice2);
+    contentContainerEl.appendChild(multChoice3);
+    contentContainerEl.appendChild(multChoice4);
 };
 
