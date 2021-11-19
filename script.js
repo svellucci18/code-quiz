@@ -1,4 +1,4 @@
-// add timer element
+// Add timer element
 var timer = document.getElementById('countdown');
 var timeLeft = 0;
 
@@ -19,7 +19,21 @@ function countdown() {
 
 countdown()
 
-// create an object with the question sets
+// Create an object with the instructions to start and end game
+var introGame = [
+    {
+        title: "Welcome to the capital's quiz!",
+        info: "You'll have 5 minutes to guess all the state capitals, beware that answering incorrectly deducts 10 seconds from the timer. Good luck!",
+        button: "Start game"
+    },
+    {
+        title: "All done!",
+        info: "Your final score is ",
+        button: "Enter initials"
+    }
+];
+
+// Create an object with the questions as array elements
 var questions = [
     {
         question: "What is the capital of Iowa?",
@@ -522,5 +536,27 @@ var questions = [
         correct: "Frankfort"
     },
 
-]
+];
 
+// Get the parent element that will store the content
+var contentContainerEl = document.querySelector('.content');
+
+// Start an empty string to continue building on to.
+var htmlTemplateString = "";
+
+// Template literal test
+for(var i=0; i<introGame.length; i++) {
+    // Create and append a new block of HTML template string content.
+    htmlTemplateString += `
+        <h2>${introGame[i].title}</h2>
+        <h3>${introGame[i].info}</h3>
+        <h3>${introGame[i].button}</h3>`;
+}
+
+// //Add the compiled HTML template string to our DOM as a new HTML element.
+// contentContainerEl.innerHTML = htmlTemplateString;
+
+// // Selects buttons using their parent content element
+// var startGame = contentContainerEl.querySelector('.button');
+// var index = 0;
+// var c

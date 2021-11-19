@@ -13,7 +13,7 @@ SO THAT I can learn the state capitals in a fun game format
 ## Acceptance Criteria
 
 ```
-GIVEN I am taking a code quiz
+GIVEN I am taking a capitals quiz
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
 WHEN I answer a question
