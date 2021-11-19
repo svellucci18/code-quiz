@@ -544,19 +544,43 @@ var contentContainerEl = document.querySelector('.content');
 // Start an empty string to continue building on to.
 var htmlTemplateString = "";
 
-// Template literal test
-for(var i=0; i<introGame.length; i++) {
-    // Create and append a new block of HTML template string content.
-    htmlTemplateString += `
+// // Template literal test
+// for(var i=0; i<introGame.length; i++) {
+//     // Create and append a new block of HTML template string content.
+//     htmlTemplateString += `
+//         <h2>${introGame[i].title}</h2>
+//         <h3>${introGame[i].info}</h3>
+//         <h3>${introGame[i].button}</h3>`;
+// }
+
+// //Add the compiled HTML template string to our DOM as a new HTML element.
+// contentContainerEl.innerHTML = htmlTemplateString;
+
+// Selects buttons using their parent content element
+var startGame = contentContainerEl.querySelector('.startGame');
+var index = 0;
+var currentContent;
+
+// Navigation test
+function navigate(direction) {
+    index = index + direction;
+    if (index <0) {
+        index = contentContainerEl.length - 1;
+    } else if (index > contentContainerEl.length -1) {
+        index = 0;
+    }
+    currentContent = introGame[index];
+    contentContainerEl.innerHTML = `
         <h2>${introGame[i].title}</h2>
         <h3>${introGame[i].info}</h3>
         <h3>${introGame[i].button}</h3>`;
 }
 
-// //Add the compiled HTML template string to our DOM as a new HTML element.
-// contentContainerEl.innerHTML = htmlTemplateString;
+// Clicking on startGame button ...
+startGame.addEventListener("click", function(event) {
+    event.stopPropagation();
 
-// // Selects buttons using their parent content element
-// var startGame = contentContainerEl.querySelector('.button');
-// var index = 0;
-// var c
+    navigate(1);
+});
+
+navigate(0);
