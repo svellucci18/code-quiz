@@ -550,3 +550,54 @@ var currentContent;
 var changeHeader = document.querySelector('#contentHeader');
 changeHeader.textContent = "Welcome to the state capitals quiz!"
 
+
+
+
+// A set of data to work with. Here we have an array list of objects representing website information we want to display.
+var data = [
+    {
+        title: "Site 1",
+        link: "https://google.com",
+        thumbnail: {
+            src: "assets/images/image_1.jpg",
+            alt: "man working"
+        }
+    },
+    {
+        title: "Site 2",
+        link: "https://twitter.com",
+        thumbnail: {
+            src: "assets/images/image_2.jpg",
+            alt: "group brainstorm"
+        }
+    },
+    {
+        title: "Site 3",
+        link: "https://instagram.com",
+        thumbnail: {
+            src: "assets/images/image_3.jpg",
+            alt: "women working"
+        }
+    }
+];
+
+// Get the parent element we will add our new HTML content to.
+var siteContainerEl = document.querySelector('.sites');
+
+// Start a new empty string to continue building on to.
+var htmlTemplateString = "";
+
+// For each object of website data that I have...
+for(var i=0; i < data.length; i++) {
+    // Create and append a new block of HTML template string content.
+    htmlTemplateString += `
+    <div class="site1">
+        <h4>${data[i].title}</h4>
+        <a href="${data[i].link}">
+            <img src="${data[i].thumbnail.src}" alt="${data[i].thumbnail.alt}">
+        </a>
+    </div>`;
+}
+
+// Add the compiled HTML template string to our DOM as new HTML content.
+siteContainerEl.innerHTML = htmlTemplateString;

@@ -523,21 +523,26 @@ contentContainerEl.appendChild(startGame);
 
 // Create class, id and style for welcome page
 welcome.className = "contentHeader";
+welcome.id = "welcomeHeader";
 instructions.setAttribute("style", "margin:auto; width:80%; padding:15px 0px; line-height: 1.5;");
+instructions.id = "instructions";
 startGame.id = "startGameButton";
 
-// Access the start game button
+// Access the welcome page content including start game button
 var startGameButton = document.querySelector('#startGameButton');
+var welcomeEl = document.querySelector('#welcomeHeader');
+var instructionsEl = document.querySelector('#instructions')
 
 // Add timer element
 var timer = document.getElementById('countdown');
 var timeLeft = 0;
 
+// function for the countdown timer
 function countdown() {
     timeLeft = 50000;
     var timeInterval = setInterval(function () {
         timeLeft--;
-        timer.textContent = "Time: " + timeLeft;
+        timer.textContent = "Time: " + (timeLeft/10000) + " minutes";
 
         // create if statement for subtracting 10000ms when user selects incorrectly.
         if(timeLeft === 0) {
@@ -546,7 +551,37 @@ function countdown() {
         }
 
     }, 1000);
-}
+};
 
-// When start game is clicked start timer
+// When start game is clicked start timer, hide welcome content and start quiz
 startGameButton.addEventListener("click",countdown);
+startGameButton.addEventListener("click",hideWelcome);
+// startGameButton.addEventListener("click",quiz);
+
+function hideWelcome() {
+    startGameButton.remove();
+    welcomeEl.remove();
+    instructionsEl.remove();
+};
+
+// Create question and answer elements in document
+var question = document.createElement("h2");
+var multChoice1 = document.createElement("button");
+var multChoice2 = document.createElement("button");
+var multChoice3 = document.createElement("button");
+var multChoice4 = document.createElement("button");
+
+// Add text to the question template HOW TO PULL THIS FROM MY ARRAY
+question.textContent = "What is the capital of Iowa?";
+multChoice1.textContent = "1. Salem";
+multChoice2.textContent = "2. Des Moines";
+multChoice3.textContent = "3. Topeka";
+multChoice4.textContent = "4. Omaha";
+
+// function for the quiz
+var quizIndex = 0;
+function quiz() {
+    
+
+};
+

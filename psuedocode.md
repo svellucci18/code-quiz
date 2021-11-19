@@ -32,7 +32,7 @@ Thoughts:
     - Make the start page content with js DONE
     - Stylize the start page with class names DONE
     - if pressed 
-        -delete the content of the instructions 
+        -delete the content of the instructions DONE
         -start timer DONE
         -jump into the first question.
 
