@@ -25,3 +25,9 @@
 - display the answer result
 - end the game
     - stop the timer from counting down [clearInterval]
+
+
+Thoughts:
+- Start page with Instructions and a button that is listening.
+    - Make the start page content with js
+    - if pressed delete the content of the instructions and jump into the first question.

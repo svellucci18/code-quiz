@@ -19,6 +19,19 @@ function countdown() {
 
 countdown()
 
+// Create an object with the instructions to start and end game
+var introGame = [
+    {
+        title: "Welcome to the state capitals quiz!",
+        info: "You'll have 5 minutes to guess all the state capitals, beware that answering incorrectly deducts 10 seconds from the timer. Good luck!",
+        button: "Start game"
+    },
+    {
+        title: "All done!",
+        info: "Your final score is ",
+        button: "Enter initials"
+    }
+];
 
 // Create an object with the questions as array elements
 var questions = [
@@ -525,34 +538,15 @@ var questions = [
 
 ];
 
-// Create an object with the instructions to start and end game
-var introGame = [
-    {
-        title: "Welcome to the state capitals quiz!",
-        info: "You'll have 5 minutes to guess all the state capitals, beware that answering incorrectly deducts 10 seconds from the timer. Good luck!",
-        button: "Start game"
-    },
-    {
-        title: "All done!",
-        info: "Your final score is ",
-        button: "Enter initials"
-    }
-];
-
-
 // Get the parent element that will store the content
 var contentContainerEl = document.querySelector('.content');
 
-// Create welcome page in document
-var welcome = document.createElement("h2");
-var instructions = document.createElement("h3");
-var startGame = document.createElement("button");
+// Selects buttons using their parent content element
+var startGame = contentContainerEl.querySelector('.startGame');
+var index = 0;
+var currentContent;
 
-// Add text to welcome page
-welcome.textContent = "Welcome to the state capitals quiz!";
-instructions.textContent = "You'll have 5 minutes to guess all the state capitals, beware that answering incorrectly deducts 10 seconds from the timer. Good luck!";
-startGame.textContent = "Start"
+// Try to create the text in contentHeader from js
+var changeHeader = document.querySelector('#contentHeader');
+changeHeader.textContent = "Welcome to the state capitals quiz!"
 
-contentContainerEl.appendChild(welcome);
-contentContainerEl.appendChild(instructions);
-contentContainerEl.appendChild(startGame);

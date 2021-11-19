@@ -20,7 +20,7 @@
 
   li {
       font-size:15px;
-      color: purple;
+      color: #0159B5ff;
   }
 
 /* Content box */
@@ -32,7 +32,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 40vw;
-    background-color: #ecc4b5;
+    background-color: #F4F4F8;
     padding: 20px;
   }
 
@@ -41,7 +41,7 @@
     margin: 24px;
     cursor: pointer;
     font-size: 24px;
-    background-color: #247BA0;
+    background-color: #0159B5ff;
     color: white;
   }  
 
