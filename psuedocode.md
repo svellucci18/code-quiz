@@ -29,5 +29,12 @@
 
 Thoughts:
 - Start page with Instructions and a button that is listening.
-    - Make the start page content with js
-    - if pressed delete the content of the instructions and jump into the first question.
+    - Make the start page content with js DONE
+    - Stylize the start page with class names DONE
+    - if pressed 
+        -delete the content of the instructions 
+        -start timer DONE
+        -jump into the first question.
+
+- Begin Quiz
+    - Make the content of the quiz with a template literal

@@ -1,25 +1,3 @@
-// Add timer element
-var timer = document.getElementById('countdown');
-var timeLeft = 0;
-
-function countdown() {
-    timeLeft = 50000;
-    var timeInterval = setInterval(function () {
-        timeLeft--;
-        timer.textContent = "Time: " + timeLeft;
-
-        // create if statement for subtracting 10000ms when user selects incorrectly.
-        if(timeLeft === 0) {
-            clearInterval(timeInterval);
-            console.log("All done!")
-        }
-
-    }, 1000);
-}
-
-countdown()
-
-
 // Create an object with the questions as array elements
 var questions = [
     {
@@ -525,20 +503,6 @@ var questions = [
 
 ];
 
-// Create an object with the instructions to start and end game
-var introGame = [
-    {
-        title: "Welcome to the state capitals quiz!",
-        info: "You'll have 5 minutes to guess all the state capitals, beware that answering incorrectly deducts 10 seconds from the timer. Good luck!",
-        button: "Start game"
-    },
-    {
-        title: "All done!",
-        info: "Your final score is ",
-        button: "Enter initials"
-    }
-];
-
 
 // Get the parent element that will store the content
 var contentContainerEl = document.querySelector('.content');
@@ -551,8 +515,38 @@ var startGame = document.createElement("button");
 // Add text to welcome page
 welcome.textContent = "Welcome to the state capitals quiz!";
 instructions.textContent = "You'll have 5 minutes to guess all the state capitals, beware that answering incorrectly deducts 10 seconds from the timer. Good luck!";
-startGame.textContent = "Start"
+startGame.textContent = "Start";
 
 contentContainerEl.appendChild(welcome);
 contentContainerEl.appendChild(instructions);
 contentContainerEl.appendChild(startGame);
+
+// Create class, id and style for welcome page
+welcome.className = "contentHeader";
+instructions.setAttribute("style", "margin:auto; width:80%; padding:15px 0px; line-height: 1.5;");
+startGame.id = "startGameButton";
+
+// Access the start game button
+var startGameButton = document.querySelector('#startGameButton');
+
+// Add timer element
+var timer = document.getElementById('countdown');
+var timeLeft = 0;
+
+function countdown() {
+    timeLeft = 50000;
+    var timeInterval = setInterval(function () {
+        timeLeft--;
+        timer.textContent = "Time: " + timeLeft;
+
+        // create if statement for subtracting 10000ms when user selects incorrectly.
+        if(timeLeft === 0) {
+            clearInterval(timeInterval);
+            console.log("All done!");
+        }
+
+    }, 1000);
+}
+
+// When start game is clicked start timer
+startGameButton.addEventListener("click",countdown);

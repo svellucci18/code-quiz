@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
   }
 
 
@@ -38,9 +39,10 @@
 
   button {
     padding: 10px;
-    margin: 24px;
+    margin: auto;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
+    border-radius: 10px;
     background-color: #0159B5ff;
     color: white;
   }  
