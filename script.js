@@ -8,7 +8,7 @@ var questions = [
             "3. Topeka",
             "4. Omaha"
         ],
-        correct: "Des Moines"
+        correct: "2. Des Moines"
     },
     {
         question: "What is the capital of Nebraska?",
@@ -18,7 +18,7 @@ var questions = [
             "3. Omaha",
             "4. Wichita"
         ],
-        correct: "Lincoln"
+        correct: "2. Lincoln"
     },
     {
         question: "What is the capital of Maine?",
@@ -28,7 +28,7 @@ var questions = [
             "3. Augusta",
             "4. Portland"
         ],
-        correct: "Augusta"
+        correct: "3. Augusta"
     },
     {
         question: "What is the capital of Florida?",
@@ -38,7 +38,7 @@ var questions = [
             "3. Tallahassee",
             "4. Jacksonville"
         ],
-        correct: "Tallahassee"
+        correct: "3. Tallahassee"
     },
     {
         question: "What is the capital of Vermont?",
@@ -592,8 +592,8 @@ function nextQuestion(event) {
     console.log(event) 
     console.log(event.target.innerText)
     console.log(questions[quizIndex].correct)
-    var string = JSON.stringify(questions[quizIndex].correct);
-    var string2 = JSON.stringify(event.target.innerText);
+    var string = questions[quizIndex].correct;
+    var string2 = event.target.innerText;
     var correct = string.includes(string2);
     console.log(correct);
     console.log(string, string2);
