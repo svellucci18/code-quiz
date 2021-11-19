@@ -37,9 +37,9 @@ Thoughts:
         -jump into the first question. DONE
 
 - Begin Quiz
-    - Make the content of the quiz with a template literal?
+    - Make the content of the quiz with a for loop. DONE
     - Style the quiz questions with CSS
-    - Loop through the questions of the quiz when an answer is selected
+    - Loop through the questions of the quiz when an answer is selected DONE
         - Announce if selected answer is true or false
         - OR Reveal correct answer
         - Subtract time from the timer when false
@@ -51,3 +51,4 @@ Thoughts:
 
 Final touches:
 - Clean up the time so it has less decimal places.
+- Find a way to look for the correct answer inside of the text rather than being exactly equal.

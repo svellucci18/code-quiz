@@ -503,7 +503,6 @@ var questions = [
 
 ];
 
-
 // Get the parent element that will store the content
 var contentContainerEl = document.querySelector('.content');
 
@@ -556,7 +555,7 @@ function countdown() {
 // When start game is clicked start timer, hide welcome content and start quiz
 startGameButton.addEventListener("click",countdown);
 startGameButton.addEventListener("click",hideWelcome);
-startGameButton.addEventListener("click",quiz);
+startGameButton.addEventListener("click",renderQuestion);
 
 function hideWelcome() {
     startGameButton.remove();
@@ -564,28 +563,47 @@ function hideWelcome() {
     instructionsEl.remove();
 };
 
-// Create question and answer elements in document
-var question = document.createElement("h2");
-var multChoice1 = document.createElement("button");
-var multChoice2 = document.createElement("button");
-var multChoice3 = document.createElement("button");
-var multChoice4 = document.createElement("button");
 
-// Add text to the question template HOW TO PULL THIS FROM MY ARRAY
-// Should the multiple choices be a list
-question.textContent = "What is the capital of Iowa?";
-multChoice1.textContent = "1. Salem";
-multChoice2.textContent = "2. Des Moines";
-multChoice3.textContent = "3. Topeka";
-multChoice4.textContent = "4. Omaha";
-
-// function for the quiz
+// Function for the rendering the question by grabbing it from the questions object
 var quizIndex = 0;
-function quiz() {
+function renderQuestion() {
+    // Create question headers
+    var question = document.createElement("h2");
+    question.textContent = questions[quizIndex].question;
+    question.className = "contentHeader";
     contentContainerEl.appendChild(question);
-    contentContainerEl.appendChild(multChoice1);
-    contentContainerEl.appendChild(multChoice2);
-    contentContainerEl.appendChild(multChoice3);
-    contentContainerEl.appendChild(multChoice4);
+    
+    // Loop through the multiple choice answers and create buttons for them.
+    for(var i=0; i<4; i++) {
+        var multChoice = document.createElement("button");
+        var lineBreak = document.createElement("br");
+        multChoice.textContent = questions[quizIndex].multChoices[i];
+        multChoice.className = "multChoices";
+        contentContainerEl.appendChild(multChoice);
+        contentContainerEl.appendChild(lineBreak);
+        // when the answer is selected nextQuestion is called
+        multChoice.addEventListener("click",nextQuestion)
+    };
+};
+
+// Function to render next Question and reveal if answer was correct and decrement timer
+function nextQuestion(event) {
+    // Find the button that was clicked
+    console.log(event) 
+    console.log(event.target.innerText)
+    console.log(questions[quizIndex].correct)
+    var string = JSON.stringify(questions[quizIndex].correct);
+    var string2 = JSON.stringify(event.target.innerText);
+    var correct = string.includes(string2);
+    console.log(correct);
+    console.log(string, string2);
+    if(string == string2) {
+        console.log("correct");
+    };
+    // Adds one to the index, aka which question are we on.
+    quizIndex++;
+    // Clear the previous question
+    contentContainerEl.innerHTML = "";
+    renderQuestion();
 };
 

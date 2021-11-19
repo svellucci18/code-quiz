@@ -601,3 +601,21 @@ for(var i=0; i < data.length; i++) {
 
 // Add the compiled HTML template string to our DOM as new HTML content.
 siteContainerEl.innerHTML = htmlTemplateString;
+
+
+// Function to render next Question and reveal if answer was correct and decrement timer
+function nextQuestion(event) {
+    console.log(event.target.innerText) //innerText to find the text inside!!
+    // Adds one to the index, aka which question are we on.
+    quizIndex++;
+    // Clear the previous question
+    contentContainerEl.innerHTML = "";
+    renderQuestion();
+};
+
+
+
+// includes rather than exact equal
+// var string = questions[quizIndex].correct;
+// var string2 = JSON.stringify(event.target.innerText)
+// var correct = string.includes(string2);
