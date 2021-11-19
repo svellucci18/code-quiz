@@ -34,7 +34,20 @@ Thoughts:
     - if pressed 
         -delete the content of the instructions DONE
         -start timer DONE
-        -jump into the first question.
+        -jump into the first question. DONE
 
 - Begin Quiz
-    - Make the content of the quiz with a template literal
+    - Make the content of the quiz with a template literal?
+    - Style the quiz questions with CSS
+    - Loop through the questions of the quiz when an answer is selected
+        - Announce if selected answer is true or false
+        - OR Reveal correct answer
+        - Subtract time from the timer when false
+    -Stop quiz when timer is out or all questions are answered
+        - Store time when finished
+
+- Ask for user initials
+    - Create scoreboard
+
+Final touches:
+- Clean up the time so it has less decimal places.

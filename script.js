@@ -572,6 +572,7 @@ var multChoice3 = document.createElement("button");
 var multChoice4 = document.createElement("button");
 
 // Add text to the question template HOW TO PULL THIS FROM MY ARRAY
+// Should the multiple choices be a list
 question.textContent = "What is the capital of Iowa?";
 multChoice1.textContent = "1. Salem";
 multChoice2.textContent = "2. Des Moines";
