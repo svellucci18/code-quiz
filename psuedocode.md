@@ -40,8 +40,8 @@ Thoughts:
     - Make the content of the quiz with a for loop. DONE
     - Style the quiz questions with CSS
     - Loop through the questions of the quiz when an answer is selected DONE
-        - Announce if selected answer is true or false
-        - OR Reveal correct answer
+        - Announce if selected answer is true or false DONE
+        - OR Reveal correct answer DONE
         - Subtract time from the timer when false
     -Stop quiz when timer is out or all questions are answered
         - Store time when finished

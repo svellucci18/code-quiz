@@ -596,11 +596,11 @@ function nextQuestion(event) {
 
     if(userAnswer == correct) {
         console.log("correct");
-        result.textContent = "correct!";
+        result.textContent = correct + " was correct! ";
         result.className = "result";
     } else {
         console.log("incorrect");
-        result.textContent = "incorrect!";
+        result.textContent = "Nope! The correct answer was " + correct;
         result.className = "result";
     };
 
@@ -609,7 +609,7 @@ function nextQuestion(event) {
 
     // Clear the previous question
     contentContainerEl.innerHTML = "";
-    renderQuestion();
     contentContainerEl.appendChild(result);
+    renderQuestion();
 };
 

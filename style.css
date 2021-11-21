@@ -46,7 +46,7 @@
     .result {
         font-size: 15px;
         font-style: italic;
-        text-align: left;
+        padding: 10px;
     }
 
 /* Buttons */
