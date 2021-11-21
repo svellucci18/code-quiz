@@ -48,7 +48,10 @@ Thoughts:
 
 - Ask for user initials
     - Create scoreboard
+    - Store initials and scores with localStorage
 
 Final touches:
 - Clean up the time so it has less decimal places.
 - Find a way to look for the correct answer inside of the text rather than being exactly equal.
+- Add numbers dynamically to the answer choices.
+- Data attribute consolidation

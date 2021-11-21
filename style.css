@@ -7,7 +7,7 @@
   }
 
 
-  /* Header */
+/* Header */
   header ul {
       display: flex;
       justify-content: space-between;
@@ -25,25 +25,41 @@
   }
 
 /* Content box */
-.container {
-    display: block;
-    margin: 60px auto;
-    text-align: center;
-    font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 40vw;
-    background-color: #F4F4F8;
-    padding: 20px;
-  }
+    .container {
+        display: block;
+        margin: 60px auto;
+        text-align: center;
+        font-size: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 40vw;
+        background-color: #F4F4F8;
+        padding: 20px;
+    }
 
-  button {
+    /* Questions */
+    .contentHeader {
+        padding: 10px;
+    }
+
+    /* Results */
+    .result {
+        font-size: 15px;
+        font-style: italic;
+        text-align: left;
+    }
+
+/* Buttons */
+button {
     padding: 10px;
-    margin: auto;
+    margin: 5px;
     cursor: pointer;
     font-size: 20px;
     border-radius: 10px;
     background-color: #0159B5ff;
     color: white;
-  }  
+}  
+
+
+
 
