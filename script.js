@@ -567,6 +567,7 @@ function renderQuestion() {
     };
 };
 
+
 // Function to render next Question and reveal if answer was correct and decrement timer if wrong
 function nextQuestion(event) {
     // Declare button that was clicked
@@ -575,26 +576,31 @@ function nextQuestion(event) {
     var correct = questions[quizIndex].correct;
     var result = document.createElement("h3");
 
-    if(userAnswer == correct) {
-        console.log("correct");
-        result.textContent = correct + " was correct! ";
-        result.className = "result";
+    // only generates next question until you run out of questions
+    if( quizIndex < questions.length - 1 ) {
+        if(userAnswer == correct) {
+            console.log("correct");
+            result.textContent = correct + " was correct! ";
+            result.className = "result";
+        } else {
+            console.log("incorrect");
+            result.textContent = "Nope! The correct answer was " + correct;
+            result.className = "result";
+            console.log(timeLeft);
+            timeLeft = timeLeft - 10000;
+            console.log(timeLeft);
+        };
+    
+        quizIndex++;  
+
+        // Clear the previous question and renders next question
+        emptyContainer();
+        contentContainerEl.appendChild(result);
+        renderQuestion();   
+
     } else {
-        console.log("incorrect");
-        result.textContent = "Nope! The correct answer was " + correct;
-        result.className = "result";
-        console.log(timeLeft);
-        timeLeft = timeLeft - 10000;
-        console.log(timeLeft);
-    };
-
-    // Adds one to the index, aka which question are we on.
-    quizIndex++;
-
-    // Clear the previous question
-    emptyContainer();
-    contentContainerEl.appendChild(result);
-    renderQuestion();
+        winGame();
+    }
 };
 
 // init function is called when the page loads at the start so that you can pull from localstorage.
@@ -608,7 +614,7 @@ var isWin = false;
 var endGame = document.createElement("h2");
 // Add timer element
 var timer = document.getElementById('countdown');
-var timeLeft = 0;
+var timeLeft = 300000;
 
 // The winGame function is called if the win condition is met.
 function winGame() {
@@ -629,13 +635,10 @@ function loseGame() {
 
 // function for the countdown timer
 function countdown() {
-        timeLeft = 300000;
-        
     var timeInterval = setInterval(function () {
         timeLeft--;
-        timer.textContent = "Time: " + parseFloat(timeLeft/60000).toFixed(2) + " minutes";
-        
-        // create if statement for subtracting 10000ms when user selects incorrectly.
+        timer.textContent = "Time: " + (timeLeft/60000) + " minutes";
+
         if(timeLeft === 0) {
             clearInterval(timeInterval);
             console.log("All done!");

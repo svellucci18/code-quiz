@@ -625,8 +625,33 @@ startGameButton.addEventListener("click",startGame);
 
 function startGame() {
     timeLeft = 300000;
-    timer.textContent = "Time: " + (timeLeft/60000) + " minutes";
+    timer.textContent = "Time: " + parseFloat(timeLeft/60000).toFixed(2) + " minutes";
     countdown();
     emptyContainer();
     renderQuestion();
+}
+
+
+
+// End game tried putting inside of nextQuestion function and broke everything
+if( timeLeft === 0 ) {
+    loseGame();
+} else {
+        while( quizIndex < questions.length ) {
+            // Adds one to the index, aka which question are we on.
+            quizIndex++;
+            // Clear the previous question
+            emptyContainer();
+            contentContainerEl.appendChild(result);
+            renderQuestion();
+        } 
+        winGame();   
+}
+
+function endGame() {
+    if( timeLeft === 0 ) {
+        loseGame();
+    } else {
+        nextQuestion();
+    }
 }
