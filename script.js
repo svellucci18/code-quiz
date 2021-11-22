@@ -532,35 +532,15 @@ var startGameButton = document.querySelector('#startGameButton');
 var welcomeEl = document.querySelector('#welcomeHeader');
 var instructionsEl = document.querySelector('#instructions')
 
-// Add timer element
-var timer = document.getElementById('countdown');
-var timeLeft = 0;
-
-// function for the countdown timer
-function countdown() {
-    timeLeft = 50000;
-    var timeInterval = setInterval(function () {
-        timeLeft--;
-        timer.textContent = "Time: " + (timeLeft/10000) + " minutes";
-
-        // create if statement for subtracting 10000ms when user selects incorrectly.
-        if(timeLeft === 0) {
-            clearInterval(timeInterval);
-            console.log("All done!");
-        }
-
-    }, 1000);
-};
-
 // When start game is clicked start timer, hide welcome content and start quiz
+// Might want to clean this up into one startGame function.
 startGameButton.addEventListener("click",countdown);
-startGameButton.addEventListener("click",hideWelcome);
+startGameButton.addEventListener("click",emptyContainer);
 startGameButton.addEventListener("click",renderQuestion);
 
-function hideWelcome() {
-    startGameButton.remove();
-    welcomeEl.remove();
-    instructionsEl.remove();
+// Clears contents of contentContainerEl 
+function emptyContainer() {
+    contentContainerEl.innerHTML = "";
 };
 
 
@@ -608,8 +588,53 @@ function nextQuestion(event) {
     quizIndex++;
 
     // Clear the previous question
-    contentContainerEl.innerHTML = "";
+    emptyContainer();
     contentContainerEl.appendChild(result);
     renderQuestion();
 };
 
+// init function is called when the page loads at the start so that you can pull from localstorage.
+function init() {
+    getScore();
+};
+
+// scoreboard variables and default for starting
+var scoreTracker = [];
+var isWin = false;
+var endGame = document.createElement("h2");
+// Add timer element
+var timer = document.getElementById('countdown');
+var timeLeft = 0;
+
+// The winGame function is called if the win condition is met.
+function winGame() {
+    emptyContainer();
+    endGame.textContent = "You've completed the state capital's challenge! Your score is " + timeLeft;
+    contentContainerEl.appendChild(endGame);
+    scoreTracker.push(timeLeft);
+    setWins()
+}
+
+// The loseGame function is called when timer reaches 0
+function loseGame() {
+    emptyContainer();
+    endGame.textContent = "Out of time! Try again?";
+    contentContainerEl.appendChild(endGame);
+    contentContainerEl.appendChild(startGame);
+}
+
+// function for the countdown timer
+function countdown() {
+    timeLeft = 50000;
+    var timeInterval = setInterval(function () {
+        timeLeft--;
+        timer.textContent = "Time: " + (timeLeft/10000) + " minutes";
+
+        // create if statement for subtracting 10000ms when user selects incorrectly.
+        if(timeLeft === 0) {
+            clearInterval(timeInterval);
+            console.log("All done!");
+        }
+
+    }, 1000);
+};
