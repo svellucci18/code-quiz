@@ -538,6 +538,7 @@ startGameButton.addEventListener("click",countdown);
 startGameButton.addEventListener("click",emptyContainer);
 startGameButton.addEventListener("click",renderQuestion);
 
+
 // Clears contents of contentContainerEl 
 function emptyContainer() {
     contentContainerEl.innerHTML = "";
@@ -582,6 +583,9 @@ function nextQuestion(event) {
         console.log("incorrect");
         result.textContent = "Nope! The correct answer was " + correct;
         result.className = "result";
+        console.log(timeLeft);
+        timeLeft = timeLeft - 10000;
+        console.log(timeLeft);
     };
 
     // Adds one to the index, aka which question are we on.
@@ -625,11 +629,12 @@ function loseGame() {
 
 // function for the countdown timer
 function countdown() {
-    timeLeft = 50000;
+        timeLeft = 300000;
+        
     var timeInterval = setInterval(function () {
         timeLeft--;
-        timer.textContent = "Time: " + (timeLeft/10000) + " minutes";
-
+        timer.textContent = "Time: " + parseFloat(timeLeft/60000).toFixed(2) + " minutes";
+        
         // create if statement for subtracting 10000ms when user selects incorrectly.
         if(timeLeft === 0) {
             clearInterval(timeInterval);

@@ -619,3 +619,14 @@ function nextQuestion(event) {
 // var string = questions[quizIndex].correct;
 // var string2 = JSON.stringify(event.target.innerText)
 // var correct = string.includes(string2);
+
+
+startGameButton.addEventListener("click",startGame);
+
+function startGame() {
+    timeLeft = 300000;
+    timer.textContent = "Time: " + (timeLeft/60000) + " minutes";
+    countdown();
+    emptyContainer();
+    renderQuestion();
+}
