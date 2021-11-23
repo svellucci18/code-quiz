@@ -557,6 +557,7 @@ function renderQuestion() {
     contentContainerEl.appendChild(question);
     
     // Loop through the multiple choice answers and create buttons for them.
+    // Add data attributes to the buttons use multChoice.dataset below the text.Content
     for(var i=0; i<4; i++) {
         var multChoice = document.createElement("button");
         var lineBreak = document.createElement("br");
@@ -589,7 +590,7 @@ function nextQuestion(event) {
             result.textContent = "Nope! The correct answer was " + correct;
             result.className = "result";
             console.log(timeLeft);
-            timeLeft = timeLeft - 10000;
+            timeLeft = timeLeft - 10;
             console.log(timeLeft);
         };
     
