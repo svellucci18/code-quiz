@@ -533,11 +533,13 @@ var welcomeEl = document.querySelector('#welcomeHeader');
 var instructionsEl = document.querySelector('#instructions')
 
 // When start game is clicked start timer, hide welcome content and start quiz
-// Might want to clean this up into one startGame function.
-startGameButton.addEventListener("click",countdown);
-startGameButton.addEventListener("click",emptyContainer);
-startGameButton.addEventListener("click",renderQuestion);
+startGameButton.addEventListener("click",startGameFxn);
 
+function startGameFxn() {
+    countdown();
+    emptyContainer();
+    renderQuestion();
+}
 
 // Clears contents of contentContainerEl 
 function emptyContainer() {
@@ -614,7 +616,7 @@ var isWin = false;
 var endGame = document.createElement("h2");
 // Add timer element
 var timer = document.getElementById('countdown');
-var timeLeft = 300000;
+var timeLeft = 300; //this is in seconds
 
 // The winGame function is called if the win condition is met.
 function winGame() {
@@ -637,7 +639,7 @@ function loseGame() {
 function countdown() {
     var timeInterval = setInterval(function () {
         timeLeft--;
-        timer.textContent = "Time: " + (timeLeft/60000) + " minutes";
+        timer.textContent = "Time remaining: " + timeLeft + " seconds";
 
         if(timeLeft === 0) {
             clearInterval(timeInterval);
