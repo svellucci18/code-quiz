@@ -48,10 +48,12 @@ Thoughts:
 
 - Create scoreboard
     - Ask for user initials when game is finished
-    - When quiz ends
+    - If they win:
         - Store time when finished
         - Ask user for initials
         - Store initials and scores with localStorage
+        - declare all variables at the top
+        - if I want the scoreboard in my contentContainerEl, I need to dynamically create that HTML
   
     
 
@@ -60,3 +62,9 @@ Final touches:
 - Find a way to look for the correct answer inside of the text rather than being exactly equal.
 - Add numbers dynamically to the answer choices.
 - Data attribute consolidation
+- for the correct/incorrect answer prompts, build a timer within this function and set the time = to when you answer the following question.
+
+Scoreboard tips:
+Set empty array to whatever is stored in the storage when the page loads.
+-dynamically create the scoreboard in the content box when the highscores (upper left) link is clicked. 
+-Use the array to populate the list getItem
