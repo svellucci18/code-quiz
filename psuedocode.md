@@ -38,17 +38,22 @@ Thoughts:
 
 - Begin Quiz
     - Make the content of the quiz with a for loop. DONE
-    - Style the quiz questions with CSS
+    - Style the quiz questions with CSS DONE
     - Loop through the questions of the quiz when an answer is selected DONE
         - Announce if selected answer is true or false DONE
         - OR Reveal correct answer DONE
-        - Subtract time from the timer when false
+        - Subtract time from the timer when false DONE
     -Stop quiz when timer is out or all questions are answered
-        - Store time when finished
+        
 
-- Ask for user initials
-    - Create scoreboard
-    - Store initials and scores with localStorage
+- Create scoreboard
+    - Ask for user initials when game is finished
+    - When quiz ends
+        - Store time when finished
+        - Ask user for initials
+        - Store initials and scores with localStorage
+  
+    
 
 Final touches:
 - Clean up the time so it has less decimal places.
