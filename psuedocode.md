@@ -47,14 +47,19 @@ Thoughts:
         
 
 - Create scoreboard
-    - Ask for user initials when game is finished
+    - Ask for user initials when game is finished DONE
     - If they win:
-        - Store time when finished
-        - Ask user for initials
-        - Store initials and scores with localStorage
+        - Store time when finished DONE
+        - Ask user for initials DONE
+        - Store initials and scores with localStorage DONE
         - declare all variables at the top
-        - if I want the scoreboard in my contentContainerEl, I need to dynamically create that HTML
-  
+        - if I want the scoreboard in my contentContainerEl, I need to dynamically create that HTML SKIP
+    - Print highscores
+    - Clear highscores upon demand
+Scoreboard tips:
+Set empty array to whatever is stored in the storage when the page loads.
+-dynamically create the scoreboard in the content box when the highscores (upper left) link is clicked. 
+-Use the array to populate the list getItem  
     
 
 Final touches:
@@ -66,7 +71,3 @@ Final touches:
 - tell user longest winning streak
 
 
-Scoreboard tips:
-Set empty array to whatever is stored in the storage when the page loads.
--dynamically create the scoreboard in the content box when the highscores (upper left) link is clicked. 
--Use the array to populate the list getItem

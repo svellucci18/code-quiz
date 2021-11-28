@@ -21,16 +21,7 @@ function winGame() {
     // Removing the class hidden so that it becomes visible
     highscoreDivEl.classList.remove("hidden");
     
-    savesScoreEl.addEventListener("click",function() {
-        // Grabbing the initials
-        var userInitials = formEl.value;
-        var object = {
-            user: userInitials,
-            score: timeLeft
-        }
-        scoreArray.push(object);
-        localStorage.setItem("highscores", JSON.stringify(scoreArray));  
-    });
+    savesScoreEl.addEventListener("click",setWins);
     
 }
 
@@ -42,6 +33,28 @@ function loseGame() {
     contentContainerEl.appendChild(startGame);
 }
 
-// Add functionality to the buttons on the scoreboard
+// setWins function
+function setWins() {
+    // Grabbing the initials
+    var userInitials = formEl.value;
+    var object = {
+        user: userInitials,
+        score: timeLeft
+    }
+    scoreArray.push(object);
+    localStorage.setItem("highscores", JSON.stringify(scoreArray));
+}
+
+// render highscore element
+function renderHighscore() {
+    // Create question headers
+    var highscore = document.createElement("li");
+    highscore.textContent = highscores;
+    highscore.className = "highscoresListEl";
+    contentContainerEl.appendChild(highscore);
+};
+
+// Add functionality to clear highscores
+// Note that replay button is a trick button!
 var clearHighscoresButton = document.querySelector('clearHighscores')
 

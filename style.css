@@ -84,6 +84,26 @@ button {
     display: none;
 }
 
+/* Style the scoreboard */
+#highscoreDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+input {
+    display: block;
+    font-size: larger;
+    width: 60px;
+    text-align: center;
+    margin: 10px;
+}
+
+#savesScore {
+    margin: 5px;
+}
+
 
 
 
