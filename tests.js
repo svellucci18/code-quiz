@@ -655,3 +655,4 @@ function endGame() {
         nextQuestion();
     }
 }
+

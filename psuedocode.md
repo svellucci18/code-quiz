@@ -43,7 +43,7 @@ Thoughts:
         - Announce if selected answer is true or false DONE
         - OR Reveal correct answer DONE
         - Subtract time from the timer when false DONE
-    -Stop quiz when timer is out or all questions are answered
+    -Stop quiz when timer is out or all questions are answered DONE
         
 
 - Create scoreboard
@@ -58,11 +58,13 @@ Thoughts:
     
 
 Final touches:
-- Clean up the time so it has less decimal places.
-- Find a way to look for the correct answer inside of the text rather than being exactly equal.
-- Add numbers dynamically to the answer choices.
-- Data attribute consolidation
+- Clean up the time so it has less decimal places. DONE
+- Find a way to look for the correct answer inside of the text rather than being exactly equal. SKIP
+- Add numbers dynamically to the answer choices. SKIP
+- Data attribute consolidation SKIP
 - for the correct/incorrect answer prompts, build a timer within this function and set the time = to when you answer the following question.
+- tell user longest winning streak
+
 
 Scoreboard tips:
 Set empty array to whatever is stored in the storage when the page loads.
