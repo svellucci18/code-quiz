@@ -41,3 +41,7 @@ function loseGame() {
     contentContainerEl.appendChild(endGame);
     contentContainerEl.appendChild(startGame);
 }
+
+// Add functionality to the buttons on the scoreboard
+var clearHighscoresButton = document.querySelector('clearHighscores')
+

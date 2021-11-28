@@ -58,7 +58,26 @@ button {
     border-radius: 10px;
     background-color: #0159B5ff;
     color: white;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
 }  
+
+.button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #0159B5ff;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+} 
 
 /* Hide form until needed */
 .hidden {
