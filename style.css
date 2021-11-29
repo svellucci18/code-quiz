@@ -79,17 +79,17 @@ button {
     border-left: 1px solid #CCCCCC;
 } 
 
-/* Hide form until needed */
-.hidden {
-    display: none;
-}
-
 /* Style the scoreboard */
-#highscoreDiv {
+.highscoreStyle {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+}
+
+/* Hide form until needed */
+.hidden {
+    display: none;
 }
 
 input {
@@ -103,6 +103,9 @@ input {
 #savesScore {
     margin: 5px;
 }
+
+
+
 
 
 

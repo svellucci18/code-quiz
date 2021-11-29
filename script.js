@@ -541,6 +541,8 @@ startGameButton.addEventListener("click",countdown);
 function startGameFxn() {
     emptyContainer();
     renderQuestion();
+    // // Hiding scoreboard thing
+    // highscoreDivEl.classList.setAttribute("style", "display:none;");
 }
 
 // Clears contents of contentContainerEl 

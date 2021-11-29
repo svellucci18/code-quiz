@@ -656,3 +656,41 @@ function endGame() {
     }
 }
 
+
+// init function is called when the page loads at the start so that you can pull from localstorage.
+function init() {
+    getScore();
+};
+
+
+// render highscore element
+function renderHighscore() {
+
+    var scoreArray = JSON.parse(localStorage.getItem("highscores")) || [];
+
+    for (var i = 0; i < scoreArray.length; i++) {
+ 
+        var highscoresList = document.createElement("li");
+        highscoresList.textContent = scoreArray[i].userInitials + scoreArray[i].totalPoints;
+        scoreBoard.append(highScoresList);
+    }
+
+};
+
+
+// Add functionality to clear highscores
+// Note that replay button is a trick button!
+var clearHighscoresButton = document.querySelector('clearHighscores')
+
+
+htmlTemplateString = `
+<div id = "highscoreDiv" class = "hidden">
+            <p id = "score" ></p>
+            <br>
+            <h2 class = "contentHeader">Enter initials:</h2>
+            <input id = "initials">
+            <br>
+            <button id = "savesScore">Save Score</button>
+            <button onClick="window.location.reload();">Replay</button>
+        </div>
+`;

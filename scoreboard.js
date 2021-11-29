@@ -1,8 +1,3 @@
-// init function is called when the page loads at the start so that you can pull from localstorage.
-function init() {
-    getScore();
-};
-
 // scoreboard variables and default for starting
 var scoreTracker = [];
 var isWin = false; //don't even use this?
@@ -11,6 +6,7 @@ var highscoreDivEl = document.querySelector("#highscoreDiv");
 var formEl = document.querySelector("#initials");
 var savesScoreEl = document.querySelector("#savesScore");
 var scoreArray = [];
+var htmlTemplateString = "";
 
 // The winGame function is called if the win condition is met.
 function winGame() {
@@ -20,7 +16,7 @@ function winGame() {
     scoreTracker.push(timeLeft);
     // Removing the class hidden so that it becomes visible
     highscoreDivEl.classList.remove("hidden");
-    
+
     savesScoreEl.addEventListener("click",setWins);
     
 }
@@ -45,16 +41,8 @@ function setWins() {
     localStorage.setItem("highscores", JSON.stringify(scoreArray));
 }
 
-// render highscore element
-function renderHighscore() {
-    // Create question headers
-    var highscore = document.createElement("li");
-    highscore.textContent = highscores;
-    highscore.className = "highscoresListEl";
-    contentContainerEl.appendChild(highscore);
-};
+var highscoresBoard = document.getElementById("highscoresBoard");
+var scoreBoard = document.getElementById("scoreBoard");
+var highScoresList;
 
-// Add functionality to clear highscores
-// Note that replay button is a trick button!
-var clearHighscoresButton = document.querySelector('clearHighscores')
 
