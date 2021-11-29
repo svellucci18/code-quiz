@@ -669,4 +669,13 @@ function loseGame() {
     endGame.textContent = "Out of time! Try again?";
     contentContainerEl.appendChild(endGame);
     contentContainerEl.appendChild(startGame);
+    startGameButton.addEventListener("click",replayGame);
 }
+
+
+// Refresh page to restart game if you run out of time
+function replayGame(e){
+    var e=window.event||e;
+    //do stuff
+    if(e.preventDefault){e.preventDefault()}else{e.returnValue=false}
+ }
