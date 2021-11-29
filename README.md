@@ -25,3 +25,11 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+
+## Screenshots
+![Welcome page!](./images/welcomescreen.png)
+![Question One](./images/questiononescreen.png)
+
+
+## Link to game!
+[Link to live portfolio](https://svellucci18.github.io/state-capital-quiz/)
