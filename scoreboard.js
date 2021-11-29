@@ -1,41 +1,12 @@
-// scoreboard variables and default for starting
-var scoreTracker = [];
-var endGame = document.createElement("h2");
-var highscoreDivEl = document.querySelector("#highscoreDiv");
-var formEl = document.querySelector("#initials");
-var savesScoreEl = document.querySelector("#savesScore");
-
 // Get the parent element that will store the content
 var contentContainerEl = document.querySelector('.content');
 
-// The winGame function is called if the win condition is met.
-function winGame() {
-    emptyContainer();
-    endGame.textContent = "You've completed the state capital's challenge! Your score is " + timeLeft;
-    contentContainerEl.appendChild(endGame);
-    scoreTracker.push(timeLeft);
-    // Removing the class hidden so that it becomes visible
-    highscoreDivEl.classList.remove("hidden");
-
-    savesScoreEl.addEventListener("click",setWins);
-    
-}
-
-// The loseGame function is called when timer reaches 0
-function loseGame() {
-    emptyContainer();
-    endGame.textContent = "Out of time! Try again?";
-    contentContainerEl.appendChild(endGame);
-    contentContainerEl.appendChild(startGame);
-}
-
 // Get stuff from DOM
-var highscoresBoard = document.getElementById("highscoresBoard");
-var scoreBoard = document.getElementById("scoreBoard");
-var highScoresList;
+var highscoresBoard = document.querySelector("#highscoresBoard");
+var scoreBoard = document.querySelector("#scoreBoard");
 
 // Set scoreArray to an empty set to fill with the answers
-var scoreArray = [];
+var scoreArray = renderHighscore();
 
 // setWins function
 function setWins() {
@@ -53,13 +24,13 @@ function setWins() {
 // render highscore element
 function renderHighscore() {
 
-    var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
+    var scoreArray = JSON.parse(localStorage.getItem("highscores")) || [];
 
-   for (var i = 0; i < highScores.length; i++) {
+   for (var i = 0; i < scoreArray.length; i++) {
 
        var highScoresList = document.createElement("li");
 
-       highScoresList.textContent = highScores[i].name + highScores[i].score;
+       highScoresList.textContent = scoreArray[i].initials + scoreArray[i].score;
 
        scoreBoard.append(highScoresList);
    }
