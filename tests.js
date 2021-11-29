@@ -663,10 +663,9 @@ function init() {
 };
 
 
-// render highscore element
 function renderHighscore() {
 
-    var scoreArray = JSON.parse(localStorage.getItem("highscores")) || [];
+    var highscoresList = JSON.parse(localStorage.getItem("highscores")) || [];
 
     for (var i = 0; i < scoreArray.length; i++) {
  
@@ -676,12 +675,6 @@ function renderHighscore() {
     }
 
 };
-
-
-// Add functionality to clear highscores
-// Note that replay button is a trick button!
-var clearHighscoresButton = document.querySelector('clearHighscores')
-
 
 htmlTemplateString = `
 <div id = "highscoreDiv" class = "hidden">
