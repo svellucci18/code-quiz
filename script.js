@@ -679,3 +679,16 @@ function replayGame(e){
     //do stuff
     if(e.preventDefault){e.preventDefault()}else{e.returnValue=false}
  }
+
+
+ // setWins function
+function setWins() {
+    // Grabbing the initials
+    var userInitials = formEl.value;
+    var object = {
+        user: userInitials,
+        score: timeLeft
+    }
+    scoreArray.push(object);
+    localStorage.setItem("highscores", JSON.stringify(scoreArray));
+}

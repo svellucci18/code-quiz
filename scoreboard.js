@@ -8,29 +8,19 @@ var scoreBoard = document.querySelector("#scoreBoard");
 // Set scoreArray to an empty set to fill with the answers
 var scoreArray = renderHighscore();
 
-// setWins function
-function setWins() {
-    // Grabbing the initials
-    var userInitials = formEl.value;
-    var object = {
-        user: userInitials,
-        score: timeLeft
-    }
-    scoreArray.push(object);
-    localStorage.setItem("highscores", JSON.stringify(scoreArray));
-    renderHighscore();
-}
+
 
 // render highscore element
 function renderHighscore() {
 
     var scoreArray = JSON.parse(localStorage.getItem("highscores")) || [];
+    console.log(scoreArray);
 
    for (var i = 0; i < scoreArray.length; i++) {
 
        var highScoresList = document.createElement("li");
 
-       highScoresList.textContent = scoreArray[i].initials + scoreArray[i].score;
+       highScoresList.textContent = scoreArray[i].user + scoreArray[i].score;
 
        scoreBoard.append(highScoresList);
    }
